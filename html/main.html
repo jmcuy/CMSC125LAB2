@@ -1,1 +1,33 @@
-asddadadasd
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Welcome to Lab2</title>
+        <link rel="stylesheet" type="text/css" href="D:\PycharmProjects\CMSC125LAB2\css\style.css"> 
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title-container">
+            <p id="title">CPU Scheduling Algorithms</p> 
+        </div>
+        <div class="menu-container">
+            <!-- <h1>Schedule Algorithms Generator</h1> -->
+            <div class="button-container" id="fcfs" onclick="_fcfs()">
+                First-Come-First-Serve
+            </div>
+            <div class="button-container" id="sjf" onclick="_shortest_job()">
+                Shortest-Job-First
+            </div>
+            <div class="button-container" id="prio" onclick="_prio()">
+                Priority
+            </div>
+            <div class="button-container" id="rr" onclick="_rr()">
+                Round-Robin
+            </div>
+            <div class="button-container ready-button" style="width: 200px;" id="ready" onclick="ready()">
+                Let's go!
+            </div>
+        </div>
+    </body>
+    <script src="D:\PycharmProjects\CMSC125LAB2\js\classes.js"></script>
+    <script src="D:\PycharmProjects\CMSC125LAB2\js\main.js"></script>
+</html>

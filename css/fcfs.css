@@ -1,0 +1,38 @@
+body{
+    background: rgba(151, 241, 91, 0.425);
+}
+.header-container{
+    background: rgb(88, 87, 87);
+    margin: -10px 0 0 -10px;
+    border-bottom:1px solid black;
+    padding: 10px 10px 10px 10px;
+    height: auto;
+    width: 100%;
+    /* display: inline-block; */
+}
+.top-buttons{
+    display: inline-block;
+    background:  rgb(44, 43, 43);
+    text-align: center;
+    color:#ffff;
+    font-size: 25px;
+    min-width: 100px;
+    margin-right: 10px;
+    padding:5px 5px 5px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#mode{
+    font-family: 'Press Start 2P', cursive;
+    color: #ffff;
+    float: right;
+    font-size:25px;
+    text-align: center;
+    margin:10px 20px 0 0;
+}
+#back-icon{
+  padding: 0 10px  0 10px;
+}
+#input-icon{
+    padding: 0 0 0 10px;
+}
