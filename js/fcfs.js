@@ -2,7 +2,7 @@ let all_processes = sessionStorage.getItem("list_processes")
 let obj = JSON.parse(all_processes).slice()
 let pList = JSON.parse(all_processes).slice()
 function back(){
-    this.window.location = "../"
+    this.window.location = "/CMSC125LAB2"
 }
 
 console.log(obj)
