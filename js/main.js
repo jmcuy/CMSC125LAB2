@@ -48,7 +48,7 @@ function _rr(){
 }
 function ready(){
     sessionStorage.setItem('list_processes',JSON.stringify(all_processes))
-    this.window.location = schedule_button_group[index].id + ".html" 
+    this.window.location = "../CMSC125LAB2/html/" + schedule_button_group[index].id + ".html" 
 }
 this.window.onload = function (){
     sessionStorage.clear()
