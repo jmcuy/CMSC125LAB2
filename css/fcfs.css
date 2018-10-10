@@ -22,6 +22,70 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+.process-list-container-title{
+    text-align: center;
+    font-size: 20px;
+    margin:30px 0 0 50px;
+    width:320px;
+}
+.process-list-container{
+    background:rgba(255, 255, 255, 0.705);
+    float: left;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
+    margin:0 0 0 50px;
+    width:280px;
+    height:500px;
+    overflow: hidden;
+    padding: 20px;
+    
+}
+.process-list-container:hover{
+    overflow-y:scroll;
+}
+.process-list-card{
+    display: inline-block;
+    text-align: center;
+    
+    background: rgb(85, 187, 76);
+    padding: 20px;
+    color:#ffff;
+    margin: 10px 5px 5px 5px;
+    width: 230px;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
+}
+.status-container{
+    height: auto !important;
+    margin: 20px; 
+    margin-top: -10px;
+    margin-bottom: 10px;
+    background: transparent !important;
+    width: auto !important;
+    font-size: 20px;
+} 
+.status-container:hover{
+    overflow:hidden !important; 
+}
+.status-container-div{
+    display: inline-block;
+    font-size: 20px;
+    background: rgba(27, 82, 41, 0.342) !important;
+    margin-right: 20px;
+    padding: 5px 10px 5px 10px;
+   
+}
+.gantt-chart-container{
+    background: #ffff;
+    float: left;
+    margin-left: 20px;
+    width:500px;
+    height:470px;
+    overflow: hidden;
+    padding: 10px;
+}
+.gantt-chart-container:hover{
+    overflow-x: scroll;
+}
+
 #mode{
     font-family: 'Press Start 2P', cursive;
     color: #ffff;
@@ -35,4 +99,51 @@ body{
 }
 #input-icon{
     padding: 0 0 0 10px;
+}
+.concave-box {
+    height: 80px;
+    width: 150px;
+    border-radius: 10px;
+    background: rgb(184, 102, 102);
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+    /* text-align: center;
+    padding-top: 10px;  */
+}
+
+.concave-box::before{
+    content:"";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-width: 15px;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+    top: 25px;
+    left: 120px;  /* 1px buffer for zooming problems while rendering*/
+}
+
+.convex-box{
+    background:white;
+    border-radius: 10px;
+    height: 80px;
+    width: 150px;
+    position: relative;
+    display: inline-block;
+    background: rgb(85, 187, 76);
+    /* text-align: center; */
+    /* top: 25px; */
+  
+}
+.convex-box::before{
+    content:"";
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-width: 15px;
+    border-color: transparent rgb(85, 187, 76) transparent transparent;
+    border-style: solid;
+    top: 25px;
+    left: -29px;  /* 1px buffer for zooming problems while rendering*/
 }

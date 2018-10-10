@@ -3,6 +3,8 @@ function Process(id,a,b,p){
     this.arrival_time = a
     this.burst_time = b
     this.priority = p
+    this.waiting_time = 0
+    this.turn_time = this.waiting_time + this.burst_time
     this.getId = function(i){
         this.id = i
     }
