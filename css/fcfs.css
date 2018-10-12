@@ -1,5 +1,7 @@
 body{
     background: rgba(151, 241, 91, 0.425);
+    min-width: 1300px;
+    position: relative;
 }
 .header-container{
     background: rgb(88, 87, 87);
@@ -80,10 +82,13 @@ body{
     width:500px;
     height:470px;
     overflow: hidden;
+    white-space: nowrap;
     padding: 10px;
+    
 }
 .gantt-chart-container:hover{
     overflow-x: scroll;
+
 }
 
 #mode{
@@ -100,6 +105,11 @@ body{
 #input-icon{
     padding: 0 0 0 10px;
 }
+#box-label{
+    margin: 0 auto;
+    margin-top:calc(50% - 45px) ;
+}
+
 .concave-box {
     height: 80px;
     width: 150px;
@@ -107,9 +117,8 @@ body{
     background: rgb(184, 102, 102);
     display: inline-block;
     position: relative;
-    margin-right: 20px;
-    /* text-align: center;
-    padding-top: 10px;  */
+    text-align: center;
+    vertical-align:middle;
 }
 
 .concave-box::before{
@@ -121,20 +130,18 @@ body{
     border-color: transparent white transparent transparent;
     border-style: solid;
     top: 25px;
-    left: 120px;  /* 1px buffer for zooming problems while rendering*/
+    left: 120px; 
 }
 
 .convex-box{
-    background:white;
     border-radius: 10px;
     height: 80px;
     width: 150px;
     position: relative;
     display: inline-block;
     background: rgb(85, 187, 76);
-    /* text-align: center; */
-    /* top: 25px; */
-  
+    vertical-align:middle;
+    text-align: center;
 }
 .convex-box::before{
     content:"";
@@ -145,5 +152,5 @@ body{
     border-color: transparent rgb(85, 187, 76) transparent transparent;
     border-style: solid;
     top: 25px;
-    left: -29px;  /* 1px buffer for zooming problems while rendering*/
+    left: -29px;  
 }
