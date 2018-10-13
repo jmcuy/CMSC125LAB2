@@ -92,9 +92,12 @@ body{
 }
 .gantt-chart-container:hover{
     overflow-x: scroll;
+    overflow-y:auto;
 
 }
-
+.box-container{
+    margin-bottom:40px;
+}
 #mode{
     font-family: 'Press Start 2P', cursive;
     color: #ffff;
@@ -113,7 +116,13 @@ body{
     margin: 0 auto;
     margin-top:calc(50% - 45px) ;
 }
-
+#time-container{
+    position: absolute;
+    /* background: black; */
+    /* color:white; */
+    margin: 33px 0px 0px 7px;
+    padding:5px;
+}
 .concave-box {
     height: 80px;
     width: 150px;
