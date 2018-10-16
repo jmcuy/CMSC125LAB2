@@ -28,114 +28,88 @@ for(let p = 0; p < obj.length;p++){
 // pList.shuffle()
 // console.log(pList)
 
+function update(wt,tt,parent,box_label){
+    let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
+    parent.innerHTML = box_label + label
+}
 //gant chart variables here
-
-// function scheduler(){
-//     let last_node = document.createElement("div")
-   
-//     // let tick = setInterval(function(){
-       
-//     let box_label =  "<div id='box-label'>P" + pList[pi].id + "</div>"
-//     if(pi == 0){ // if(pi % 4 == 0){
-//         let first_node = document.createElement("div")
-//         first_node.className = "concave-box"
-//         first_node.id = "first-element"
-//         let tick = setInterval(function(){
-//             update(wt,tt,first_node,box_label)
-//             if(tt == 3){
-//                 tick = null;
-//                 clearInterval(tick)
-//             }
-//             tt += 1;
-//             process_container.appendChild(first_node)
-//         },1000)    
-//         console.log("first")   
-//         setTimeout(function(){
-//             console.log("Sdasd")
-//         },10000) 
-//     }else{
-        
-//             let inner = document.createElement("div")
-//             let node = document.createElement("div")
-//             node.className = "convex-box"
-//             inner.className = "concave-box"
-//             inner.style = "background:rgb(85, 187, 76);"
-//             let x = tt; 
-            
-//             let tick2 = setInterval(function(){
-//                 update(wt,x,inner,box_label)
-//                 if(x == 20){
-//                     return;
-//                     clearInterval(tick2)
-//                 }
-//                 x += 1;
-//                 console.log(tt) 
-//                 node.appendChild(inner)
-//                 ticking = true;
-//                 process_container.appendChild(node)
-        
-//             },1000)    
-//             console.log("nodes")
-            
-        
-           
-//     }
-//     gantt_chart_parent.appendChild(process_container)
-//     pi += 1
-
-
-
-// }
 let pi = 0
 let gantt_chart_parent = document.getElementById("gantt-chart-container")
-let wt = 0
 let tt = 0
 let process_container = document.createElement("div")
 process_container.className = "box-container"
 let first_node = document.createElement("div")
+let last_node = document.createElement("div")
 
-function scheduler(pi){
-    let box_label =  "<div id='box-label'>P" + pList[pi].id + "</div>"
-    let node = document.createElement("div")
-    let inner = document.createElement("div")
+
+
+function scheduler(){
+    let wt = 0
+    let box_label =  "<div id='box-label'>P" + pList[pi].id + "</div>"   
     if(pi == 0){
         first_node.className = "concave-box"
         first_node.id = "first-element"
-        let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
-        
-        if(tt != 3){
+        if(pList[pi].burst_time != tt){
             tt += 1;
+            let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
+            first_node.innerHTML = box_label + label
+            process_container.appendChild(first_node) 
+        } else {
+            pi += 1
         }
-        
-        first_node.innerHTML = box_label + label
-        process_container.appendChild(first_node)
-        console.log("first")
     }
-    if(pi > 0){
-        node.className = "convex-box"
-        inner.className = "concave-box"
-        let x = tt;
-        if(tt != 7){
-            tt += 1
-        }
-        let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
-        inner.style = "background:rgb(85, 187, 76);"
-        inner.innerHTML = box_label + label
-        
-        node.appendChild(inner)
-        process_container.appendChild(node)
+    else if(pi > 0 && pi < pList.length - 1){
         console.log("nodes")
+        console.log("current turn  " + pList[pi].turn_time)
+        let node = document.createElement("div")
+        console.log(tt)
+        wt = pList[pi - 1].turn_time
+        if(wt + pList[pi].burst_time != tt){
+            let inner = document.createElement("div")
+            node.className = "convex-box"
+            inner.className = "concave-box"
+            tt += 1
+            let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
+            inner.style = "background:rgb(85, 187, 76);"
+            inner.innerHTML = box_label + label 
+            node.appendChild(inner)
+            process_container.appendChild(node)     
+        } else {
+            pi += 1
+        }
+    } 
+    else { 
+        console.log("last" + box_label)
+        last_node.className = "convex-box"
+        console.log(tt)
+        wt = pList[pi - 1].turn_time
+        console.log("bursttime  " + pList[pi].burst_time + "id:  " + pList[pi].id)
+        if(pList[pi].burst_time + wt != tt){
+            tt += 1;
+            let label = "<div id='time-container'>" + wt + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;" + tt + "</div>"
+            last_node.innerHTML = box_label + label
+            process_container.appendChild(last_node) 
+        } else {
+            pi += 1
+        }
     }
-    gantt_chart_parent.appendChild(process_container)    
     
-}
-setInterval(function(){
-    scheduler(1)
-    // scheduler(1)
-},1000)
-      
+    gantt_chart_parent.appendChild(process_container)    
+    if(pi == pList.length){
+        clearInterval(tick)
+    } 
+    pList[pi].turn_time = tt;
+    pList[pi].waiting_time = wt;
 
+   
+}
 //main
-// while(pi != pList.length - 1){
-//     scheduler()
-// }
+var tick = setInterval(function(){
+    scheduler(tick)
+},500)
+
+
+
+
+
+
