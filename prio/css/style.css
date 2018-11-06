@@ -1,0 +1,57 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    background:linear-gradient(135deg, rgba(71, 64, 64, 0.288) 22px, transparent 24px, transparent 24px, transparent 67px,transparent 67px, transparent 69px, transparent 69px),
+    linear-gradient(225deg, rgb(100, 161, 72) 22px, transparent 22px, transparent 24px, transparent 67px,transparent 67px, transparent 69px, transparent 69px)0 64px 
+    ;
+    background-color:rgba(151, 241, 91, 0.425);
+    background-size: 145px 200px  
+}
+.title-container{
+    background: #ffff;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    text-align: center;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
+}
+#title{
+    color:rgb(51, 45, 45);
+    padding: 10px;
+    font-size:2em;
+}
+.menu-container{
+    background-color: rgb(44, 43, 43);
+    color:#afecbcd2;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
+    margin-top:-20px;
+    width:700px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 5px;
+        
+}
+.button-container{
+    background: #0dbd33;
+    color:#ffff;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding:10px 0 10px 0;
+    border-radius: 10px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+.ready-button{
+    background:  rgb(68, 67, 67);
+    width: 200px;
+    margin-top:30px;
+}
+
+.button-container:hover{
+    box-shadow: 0px 2px 10px 4px #12180fd0;
+}
+

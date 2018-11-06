@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <title>First-Come-First-Serve</title>
+        <title>Priority-Based Algorithm</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="..\css\fcfs.css"> 
+        <link rel="stylesheet" type="text/css" href="..\css\fcfs.css">
+        <link rel="stylesheet" type="text/css" href="..\css\prio.css">  
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     </head>
     <body>
         <div class= "header-container">
             <div class="top-buttons" onclick="back()" ><i class="fas fa-long-arrow-alt-left" id="back-icon"></i>Back</div>
             <div class="top-buttons" onclick="">User<i class="far fa-keyboard" id="input-icon"></i></div>
+            <div class="top-buttons" onclick="ready()" >Generate</div>
             <div id="mode">random mode</div>
         </div>
         <div class="process-list-container-title">
@@ -55,7 +57,7 @@
         </div>
    
     </body>
-    <script src="..\js\fcfs_classes.js"></script>
-    <script src="..\js\fcfs_main.js"></script>
-    <script src="..\js\fcfs.js"></script>
+    <script src="..\js\prio_classes.js"></script>
+    <script src="..\js\prio_main.js"></script>
+    <script src="..\js\prio.js"></script>
 </html>

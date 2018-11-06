@@ -1,10 +1,11 @@
-function Process(id,a,b,p){
+function PRIO_process(id,a,b,p){
     this.id = id
     this.arrival_time = a
     this.burst_time = b
     this.priority = p
     this.waiting_time = 0
-    this.turn_time = this.waiting_time + this.burst_time
+    this.start_time = 0
+    this.turn_time = 0
     this.getId = function(i){
         this.id = i
     }
@@ -14,16 +15,10 @@ function Process(id,a,b,p){
     this.setBurstTime = function(t){
         this.burst_time = t
     }
-    this.setPriority = function(p){
-        this.priority = p
-    }
     this.getArrivalTime = function(){
         return this.arrival_time
     }
     this.getBurstTime = function(){
         return this.burst_time 
-    }
-    this.getPriority = function(){
-        return this.priority 
     }
 }
